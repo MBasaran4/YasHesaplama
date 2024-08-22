@@ -1,0 +1,284 @@
+.title{
+    font-size: 3rem;
+    color: var(--text-color);
+    text-align: center;
+    margin-top: 50px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    width: 300px;
+}
+
+.calc-date{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    background-color: var(--input-hovered-color);
+    padding: 10px;
+    border: 1px solid var(--button-color);
+    border-radius: 20px;
+    margin-bottom: 40px;
+    white-space: nowrap;
+    padding-left: 40px;
+}
+.calc-date label{
+    display: inline-block;
+    align-content: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: var(--text-color);
+    cursor: pointer;
+    width: 100%;
+    height: fit-content;
+}
+.calc-date input[type="radio"]{
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: absolute;
+    left: 35px;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--border-before-color);
+    border-radius: 30%;
+    outline: none;
+    cursor: pointer;
+    transition: background 0.3s border-color 0.3s;
+}
+.calc-date input[type="radio"]:checked{
+    background-color: var(--button-color);
+    border-color: var(--border-after-color);
+}
+.calc-date input[type="radio"]::after{
+    content: ' ';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 10px;
+    width: 10px;
+    background-color: var(--background-color);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.calc-date input[type="radio"]:checked::after{
+    opacity: 1;
+}
+
+/* Adjusting fieldset to have uniform size */
+#date{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: row;
+    white-space: nowrap;
+    width: 500px;
+}
+#date label{
+    color: var(--text-color);
+}
+
+/* Fieldset styling */
+fieldset {
+    display: grid;
+    border: none;
+    border-radius: 4px;
+}
+
+/* Styling for the select elements */
+select {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid var(--border-before-color);
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+select:hover{
+    background-color: var(--input-hovered-color);
+}
+
+/* Remove outline when select element is focused */
+select:focus {
+    outline: none;
+    background-color: var(--input-hovered-color);
+    border-color: var(--border-after-color);
+    box-shadow: 0 0 5px var(--button-color);
+}
+select::-webkit-scrollbar{
+    display: none;
+}
+select option:hover{
+    background-color: var(--border-after-color);
+}
+option{
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+
+input{
+    width: 60px;
+    padding: 5px;
+    border: 1px solid var(--border-before-color);
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    text-align: center;
+}
+input:hover{
+    background-color: var(--input-hovered-color);
+}
+
+
+
+/* Ensuring the form is responsive */
+@media (max-width: 600px) {
+    .form {
+        flex-direction: column;
+    }
+    #date{
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--button-color);
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 75px;
+    padding: 0.8em 1.7em;
+    background-color: transparent;
+    border-radius: .3em;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .5s;
+    font-weight: 400;
+    font-size: 17px;
+    border: 1px solid;
+    font-family: inherit;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: var(--button-color);
+}
+.button::before, .button::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 50px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+    background-color: var(--button-color);
+    transition: 1s ease;
+}  
+.button::before {
+    top: -1em;
+    left: -1em;
+}  
+.button::after {
+    left: calc(100% + 1em);
+    top: calc(100% + 1em);
+}
+.button:hover::before, .button:hover::after {
+    height: 410px;
+    width: 410px;
+}   
+.button:hover {
+    color: rgb(10, 25, 30);
+}   
+.button:active {
+    filter: brightness(.8);
+}
+.button:disabled {
+    background-color: var(--button-color);
+    cursor: not-allowed;
+  }
+
+.loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    width: 45px;
+    height: 40px;
+    background: linear-gradient(var(--background-color) calc(1*100%/6),var(--button-color) 0 calc(3*100%/6),var(--background-color) 0),
+              linear-gradient(var(--background-color) calc(2*100%/6),var(--button-color) 0 calc(4*100%/6),var(--background-color) 0),
+              linear-gradient(var(--background-color) calc(3*100%/6),var(--button-color) 0 calc(5*100%/6),var(--background-color) 0);
+    background-size: 10px 400%;
+    background-repeat: no-repeat;
+    animation: matrix 1s infinite linear;
+    visibility: hidden;
+    transition: 0.2s ease-in-out;
+  }
+  
+  @keyframes matrix {
+    0% {
+      background-position: 0% 100%, 50% 100%, 100% 100%
+    }
+  
+    100% {
+      background-position: 0% 0%, 50% 0%, 100% 0%
+    }
+  }
+  .spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #00a97f; /* Green color for the spinner */
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+    vertical-align: middle;
+    transition: .2s ease-in-out;
+  }
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  /* Optional: Customize the loader visibility */
+  .loader {
+    margin-top: 20px;
+    display: none;
+  }
+  .loader.visible {
+    display: block;
+  }
+
+.sonuc{
+    color: var(--button-color);
+    font-size: 1.1rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 100px;
+    margin-top: 50px;
+}
