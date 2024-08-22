@@ -86,7 +86,7 @@ function Navbar() {
                     <li>
                         <a className='title'>Zaman</a>
                         <div className='nalt'>
-                            <a href="">Yaş Hesaplama</a>
+                            <a href="https://yas-hesaplama-ten.vercel.app/">Yaş Hesaplama</a>
                         </div>
                     </li>
                 </div>
@@ -111,7 +111,7 @@ function Navbar() {
                     <li>
                         <a className='mTitle' onClick={toggleNaltZaman}>Zaman</a>
                         <div className={`mNalt ${isNaltOpenZaman ? 'active' : ''}`}>
-                            <a href="">Yaş Hesaplama</a>
+                            <a href="https://yas-hesaplama-ten.vercel.app/">Yaş Hesaplama</a>
                         </div>
                     </li>
                 </div>
