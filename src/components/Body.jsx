@@ -113,7 +113,7 @@ function Body() {
                     if(tMonth === month && tDay >= day){
                         m = 11 ;
                         tM = 0;
-                        d += 30;
+                        d += 31;
                     }
                 }
                 ageM = m - tM ;
