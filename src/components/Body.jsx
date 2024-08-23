@@ -105,10 +105,10 @@ function Body() {
                 let tD = Number(tDay);
                 if (tMonth > month || (tMonth === month && tDay >= day)) {
                     if(tMonth > month){
-                        month += 12;
+                        month = month + 12;
                     }
                     if(tMonth === month && tDay >= day){
-                        day += 30;
+                        day = day 30;
                     }
                 }
                 ageM = month - tM ;
