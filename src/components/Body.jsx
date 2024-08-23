@@ -103,16 +103,21 @@ function Body() {
                 // Sonraki doğum gününe kalan süreyi hesaplama
                 let tM = Number(tMonth);
                 let tD = Number(tDay);
+                let m = Number(month);
+                let d = Number(day);
                 if (tMonth > month || (tMonth === month && tDay >= day)) {
+                    console.log("+")
                     if(tMonth > month){
-                        tM += 12;
+                        m += 12;
                     }
-                    if(tMonth === month && tDay >= day){
-                        tD += 30;
+                    if( tDay >= day){
+                        d += 30;
                     }
                 }
-                ageM = month - tM ;
-                ageD = day - tD +1;
+                ageM = m - tM ;
+                ageD = d - tD + 1;
+                console.log(ageM);
+                console.log(ageD);
 
                 const daysUntilNextBirthday = ageM * 30 + ageD ;
 
