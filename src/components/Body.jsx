@@ -110,7 +110,7 @@ function Body() {
                     if(tMonth > month){
                         m += 12;
                     }
-                    if( tDay >= day){
+                    if(tMonth === month && tDay >= day){
                         m = 11 ;
                         tM = 0;
                         d += 30;
