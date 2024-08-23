@@ -111,14 +111,14 @@ function Body() {
                         m += 12;
                     }
                     if( tDay >= day){
+                        m = 11 ;
+                        tM = 0;
                         d += 30;
                     }
                 }
                 ageM = m - tM ;
                 ageD = d - tD + 1;
-                console.log(ageM);
-                console.log(ageD);
-
+                
                 const daysUntilNextBirthday = ageM * 30 + ageD ;
 
                 setDaysToBirthday(`Sonraki doğum gününe kalan gün: ${daysUntilNextBirthday} gün`);
