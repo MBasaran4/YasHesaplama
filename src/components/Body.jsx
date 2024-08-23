@@ -101,11 +101,15 @@ function Body() {
                 setAgeDays(`Yaşanılan Gün Sayısı: ${ageDA}`);
 
                 // Sonraki doğum gününe kalan süreyi hesaplama
-                let nextBirthdayYear = Number(tYear);
                 let tM = Number(tMonth);
                 let tD = Number(tDay);
                 if (tMonth > month || (tMonth === month && tDay >= day)) {
-                    nextBirthdayYear += 1;
+                    if(tMonth > month){
+                        month += 12;
+                    }
+                    if(tMonth === month && tDay >= day){
+                        day += 30;
+                    }
                 }
                 ageM = month - tM ;
                 ageD = day - tD +1;
