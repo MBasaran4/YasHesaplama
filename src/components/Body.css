@@ -147,6 +147,9 @@ input:hover{
 
 /* Ensuring the form is responsive */
 @media (max-width: 600px) {
+    .title{
+        font-size: 2rem;
+    }
     .form {
         flex-direction: column;
     }
